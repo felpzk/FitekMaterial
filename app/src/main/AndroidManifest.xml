@@ -17,13 +17,7 @@
             android:name=".ui.activity.FormMaterialActivity"
             android:exported="true"
             android:label="@string/title_activity_form_material"
-            android:theme="@style/Theme.FitekMaterials">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.FitekMaterials" />
 
         <activity
             android:name=".ui.activity.MainActivity"
