@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import br.com.fitekmaterials.R
+import br.com.fitekmaterials.dao.MateriaisDao
 import br.com.fitekmaterials.models.Produto
 
 class FormMaterialActivity : AppCompatActivity(R.layout.activity_form_material) {
@@ -28,12 +29,15 @@ class FormMaterialActivity : AppCompatActivity(R.layout.activity_form_material) 
             val quant = campoQuant.text.toString()
 
             val produtoNovo = Produto(
-                material = material,
-                serial = serial,
-                quantidade = quant
+                material = "MATERIAL: " + material,
+                serial = "SERIAL: " + serial,
+                quantidade = "QUANTIDADE: " + quant
             )
 
             Log.i(" FormMaterialActivity", "onCreate: $produtoNovo")
+            val dao = MateriaisDao()
+            dao.adiciona(produtoNovo)
+            Log.i(" FormMaterialActivity", "onCreate: ${dao.buscaTodos()}")
         }
     }
 
